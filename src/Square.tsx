@@ -34,14 +34,19 @@ import type { JSX } from "react";
 /** The type of function for onSquareClick. */
 type SquareClickFunction = () => void;
 
+/** The interface for the component's props for clarity and type safety. */
+interface SquareProps {
+    value: string | null;
+    onSquareClick: SquareClickFunction;
+}
+
 /**
  * The Square component.
  *
- * @param   {string}                value
- * @param   {SquareClickFunction}   onSquareClick
- * @returns                         {JSX.Element}
+ * @param   {props} SquareProps
+ * @returns         {JSX.Element}
  */
-function Square(value: string, onSquareClick: SquareClickFunction): JSX.Element {
+function Square({ value, onSquareClick }: SquareProps): JSX.Element {
     return (
         <button className="square" onClick={onSquareClick}>{value}</button>
     );

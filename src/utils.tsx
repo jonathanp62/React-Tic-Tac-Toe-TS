@@ -28,15 +28,13 @@
  * SOFTWARE.
  */
 
-import Square from "./Square.tsx";
-
 /**
  * Calculates the winner of the game.
  *
- * @param   {Array<Square>} squares
- * @returns                 {string|null}
+ * @param   {Array<string | null>}  squares
+ * @returns                         {string | null}
  */
-export function calculateWinner(squares: Array<typeof Square>): typeof Square | null {
+export function calculateWinner(squares: Array<string | null>): string | null {
     // Winning boards
 
     const lines = [
@@ -65,10 +63,10 @@ export function calculateWinner(squares: Array<typeof Square>): typeof Square | 
  * Return true if the game is over, i.e. a draw.
  * The condition is that all squares are occupied.
  *
- * @param   {Array<Square>} squares
- * @returns                 {boolean}
+ * @param   {Array<string | null>}  squares
+ * @returns                         {boolean}
  */
-export function isGameOver(squares: Array<typeof Square>): boolean {
+export function isGameOver(squares: Array<string | null>): boolean {
     let isGameOver = true;
 
     for (const square of squares) {
