@@ -30,19 +30,9 @@
 
 import './styles/App.css';          // Runs the CSS file without importing it
 import type { JSX } from "react";
+import type { BoardProps } from './types/BoardProps.tsx';
 import Square from './Square';
 import { calculateWinner, isGameOver } from "./utils";  // Import the functions
-
-type PlayFunction = (squares: Array<string | null>) => void;
-type StartOverFunction = () => void;
-
-/** The interface for the component's props for clarity and type safety. */
-interface BoardProps {
-    xIsNext: boolean;
-    squares: Array<string | null>;
-    onPlay: PlayFunction;
-    onStartOver: StartOverFunction;
-}
 
 /**
  * The Board component.

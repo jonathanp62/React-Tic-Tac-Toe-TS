@@ -1,5 +1,5 @@
 /*
- * (#)Square.tsx    0.1.0   10/15/2025
+ * (#)SquareProps.tsx   0.1.0   10/16/2025
  *
  * @author  Jonathan Parker
  * @version 0.1.0
@@ -28,20 +28,11 @@
  * SOFTWARE.
  */
 
-import './styles/App.css';      // Runs the CSS file without importing it
-import type { JSX } from "react";
-import type { SquareProps} from "./types/SquareProps.tsx";
+/** The type of function for onSquareClick. */
+type SquareClickFunction = () => void;
 
-/**
- * The Square component.
- *
- * @param   {props} SquareProps
- * @returns         {JSX.Element}
- */
-function Square({ value, onSquareClick }: SquareProps): JSX.Element {
-    return (
-        <button className="square" onClick={onSquareClick}>{value}</button>
-    );
+/** The interface for the component's props for clarity and type safety. */
+export interface SquareProps {
+    value: string | null;
+    onSquareClick: SquareClickFunction;
 }
-
-export default Square;
