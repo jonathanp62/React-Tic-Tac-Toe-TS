@@ -36,19 +36,24 @@ import { calculateWinner, isGameOver } from "./utils";  // Import the functions
 type PlayFunction = (squares: Array<string | null>) => void;
 type StartOverFunction = () => void;
 
+/** The interface for the component's props for clarity and type safety. */
+interface BoardProps {
+    xIsNext: boolean;
+    squares: Array<string | null>;
+    onPlay: PlayFunction;
+    onStartOver: StartOverFunction;
+}
+
 /**
  * The Board component.
  *
- * @param   {boolean}           xIsNext
- * @param   {Array<Square>}     squares
- * @param   {PlayFunction}      onPlay
- * @param   {StartOverFunction} onStartOver
- * @returns                     {JSX.Element}
+ * @param   {props} BoardProps
+ * @returns         {JSX.Element}
  */
-export function Board(xIsNext: boolean,
-                      squares: Array<string | null>,
-                      onPlay: PlayFunction,
-                      onStartOver: StartOverFunction): JSX.Element {
+export function Board({ xIsNext,
+                        squares,
+                        onPlay,
+                        onStartOver }: BoardProps): JSX.Element {
     /**
      * Handles a click event on a square.
      *
@@ -105,3 +110,5 @@ export function Board(xIsNext: boolean,
         </>
     );
 }
+
+export default Board;
