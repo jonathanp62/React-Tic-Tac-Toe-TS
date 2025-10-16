@@ -28,7 +28,7 @@
  * SOFTWARE.
  */
 
-import './styles/styles.css';               // Runs the CSS file without importing it
+import './styles/App.css';          // Runs the CSS file without importing it
 import type { JSX } from "react";
 import Square from './Square';
 import { calculateWinner, isGameOver } from "./utils";  // Import the functions
@@ -76,8 +76,8 @@ export function Board({ xIsNext,
         onPlay(nextSquares);
     }
 
-    const winner = calculateWinner(squares);
-    let status;
+    const winner: string | null = calculateWinner(squares);
+    let status: string;
 
     if (winner) {
         status = 'Winner: ' + winner + '!';
@@ -87,7 +87,7 @@ export function Board({ xIsNext,
         status = 'Next player: ' + (xIsNext ? "X" : "O");
     }
 
-    const rows = [0, 3, 6].map((item, index) => {
+    const rows: JSX.Element[] = [0, 3, 6].map((item, index): JSX.Element => {
         return (
             <div className="board-row" key={index}>
                 <Square value={squares[item]} onSquareClick={() => handleClick(item)} />

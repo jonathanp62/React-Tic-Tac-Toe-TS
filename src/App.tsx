@@ -30,6 +30,7 @@
 
 import './styles/App.css'
 import type { JSX } from "react";
+import Game from "./Game";
 
 /**
  * The Square component.
@@ -38,7 +39,10 @@ import type { JSX } from "react";
  */
 function App(): JSX.Element {
   return (
-     <p>The tic-tac-toe application realized in Typescript.</p>
+      <>
+        <p>The tic-tac-toe game realized in Typescript.</p>
+        <Game />
+      </>
   );
 }
 
