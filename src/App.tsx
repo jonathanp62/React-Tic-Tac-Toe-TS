@@ -33,7 +33,7 @@ import type { JSX } from "react";
 import Game from "./Game";
 
 /**
- * The Square component.
+ * The App component.
  *
  * @returns {JSX.Element}
  */
